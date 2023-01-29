@@ -3,7 +3,7 @@ import styles from './Input.module.scss'
 
 function Input() {
   return (
-    <div>input</div>
+    <input type="text" className={styles.design}></input>
   )
 }
 
