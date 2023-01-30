@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../../TestComponents/Button";
-import Container from "../../TestComponents/Container";
-import Input from "../../TestComponents/Input";
+import Button from "../pages/DesignYourSite/TestComponents/Button";
+import Container from "../pages/DesignYourSite/TestComponents/Container";
+import Input from "../pages/DesignYourSite/TestComponents/Input";
 
 //components array
 type Shash={id:number,component:JSX.Element}[] 
@@ -15,6 +15,8 @@ export let CustomComponent:React.Context<Om>
 
 export function OmProvider(props:React.PropsWithChildren){
     const[components,setComponents]=useState<Shash>([{ id: 1, component: <Button /> }, { id: 2, component: <Container /> }, { id: 3, component: <Input /> }]);   
+    // const[setteledComp, setSettledComp]=useState<Shash>([])
+    
     const updatecomponents=(a:Shash)=>{
         setComponents(a)
     }

@@ -2,9 +2,10 @@ import React from 'react'
 import styles from './DesignYourSite.module.scss'
 function Rightcontainer() {
   return (
-    <div className={styles.rightcontainer}>Rightcontainer
-      <div className={styles.sitepreview}></div>
-    </div>
+    <div draggable onDragEnter={() => console.log("entered")}
+      className={styles.rightcontainer}>Rightcontainer
+      <div draggable className={styles.sitepreview} onDrag={(l)=>(console.log("end at"+ l.target))}></div>
+    </div>      
   )
 }
 
