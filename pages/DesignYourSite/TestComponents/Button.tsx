@@ -1,10 +1,8 @@
-import React from 'react'
-import styles from './Button.module.scss'
+import React from "react";
+import styles from "./Button.module.scss";
 
 function Button() {
-  return (
-    <div draggable  className={styles.button}>Button</div>
-  )
+  return <div className={styles.button}>Button</div>;
 }
 
-export default Button
+export default Button;

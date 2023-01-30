@@ -1,12 +1,20 @@
-import React from 'react'
-import styles from './DesignYourSite.module.scss'
+import React from "react";
+import styles from "./DesignYourSite.module.scss";
 function Rightcontainer() {
   return (
-    <div draggable onDragEnter={() => console.log("entered")}
-      className={styles.rightcontainer}>Rightcontainer
-      <div draggable className={styles.sitepreview} onDrag={(l)=>(console.log("end at"+ l.target))}></div>
-    </div>      
-  )
+    <div
+      onDrop={(e) => console.log("drop")}
+      onDragOver={(e) => {
+        let event = e;
+        event.stopPropagation();
+        event.preventDefault();
+      }}
+      className={styles.rightcontainer}
+    >
+      Rightcontainer
+      <div draggable className={styles.sitepreview}></div>
+    </div>
+  );
 }
 
-export default Rightcontainer
+export default Rightcontainer;
