@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 function Navbar() {
   const [usedisplay, setusediplay] = useState(false);
@@ -80,7 +81,7 @@ function Navbar() {
 
         <div className="  w-full flex justify-end">
           <li className="mr-3 lg:mr-6 text-right  ">
-            <div className="py-3">{/* <ConnectButton></ConnectButton> */}</div>
+            <div className="py-3">{ <ConnectButton></ConnectButton>}</div>
           </li>
         </div>
       </ul>

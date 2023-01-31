@@ -26,7 +26,7 @@
 .rightcontainer{
     height:100vh;
     width:100%;
-    padding:2%;
+    padding:1%;
     text-align: center;
 }
 
@@ -38,4 +38,12 @@
     margin-right: auto;
     background-color: white;
     align-items: center;
+    padding: 2%;
+}
+
+.propertiesSection{
+    width: 20%;
+    border-left: 20px;
+    border-color:gray ;
+    background-color: darkgray;
 }
