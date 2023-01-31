@@ -3,6 +3,7 @@ import { useDrag } from "react-dnd";
 import styles from "./DesignYourSite.module.scss";
 import { useContext } from "react";
 import { CustomComponent } from "../../context/MapComponent";
+import { canvasSubject } from "@/src/subjects/canvas";
 function LeftContainer(props: any) {
   const data = useContext(CustomComponent);
 
@@ -10,12 +11,11 @@ function LeftContainer(props: any) {
     <div className={styles.leftcontainer}>
       Components
       <div className="h-fit">
-        <button onClick={() => console.log(data)}>max</button>
         {data.components.map((e) => {
           return (
             <div
               draggable
-              onDrop={() => console.log("drop")}
+              onDragStart={() => canvasSubject.next(e.component)}
               key={e.id.toString()}
             >
               {e.component}
