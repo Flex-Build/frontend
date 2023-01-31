@@ -25,7 +25,7 @@ function Rightcontainer() {
         }}
         className={styles.sitepreview}
       >
-        {components && components.map((e) => e)}
+        {components}
       </div>
     </div>
   );

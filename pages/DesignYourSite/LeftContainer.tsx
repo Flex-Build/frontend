@@ -1,27 +1,45 @@
-import React, { useRef } from "react";
-import { useDrag } from "react-dnd";
+import React from "react";
 import styles from "./DesignYourSite.module.scss";
-import { useContext } from "react";
-import { CustomComponent } from "../../context/MapComponent";
 import { canvasSubject } from "@/src/subjects/canvas";
-function LeftContainer(props: any) {
-  const data = useContext(CustomComponent);
+import { GET_ALL_COMPONENTS } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/getAllComponents";
+import { GetAllComponents } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
+import { useQuery } from "@apollo/client";
+import Exp from "./TestComponents/Exp";
+import Container from "./TestComponents/Container";
+function LeftContainer() {
+  const { data } = useQuery<GetAllComponents>(GET_ALL_COMPONENTS);
 
   return (
     <div className={styles.leftcontainer}>
       Components
       <div className="h-fit">
-        {data.components.map((e) => {
-          return (
-            <div
-              draggable
-              onDragStart={() => canvasSubject.next(e.component)}
-              key={e.id.toString()}
-            >
-              {e.component}
-            </div>
-          );
-        })}
+        <Container
+          draggable
+          onDragStart={() =>
+            canvasSubject.next(
+              <Container key={"container" + Math.random().toString()} />
+            )
+          }
+        />
+        {data &&
+          data.components.map((e) => {
+            return (
+              <div
+                draggable
+                onDragStart={() =>
+                  canvasSubject.next(
+                    <Exp
+                      key={Math.random().toString() + Date.now()}
+                      ipfsHash={e.code_hash}
+                    />
+                  )
+                }
+                key={e.id.toString()}
+              >
+                <Exp ipfsHash={e.code_hash} />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
