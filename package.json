@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "npm run codegen",
+    "typechain-gen": "rm -rf src/contracts/*ts src/contracts/factories/* && typechain --target ethers-v5 --out-dir src/contracts './src/contracts/abis/*.json'",
+    "codegen": "npm run graphql-gen && npm run typechain-gen",
     "graphql-gen": "apollo service:download --endpoint=https://api.thegraph.com/subgraphs/name/thisisommore/flexbuild ./src/graph-ql/graphql-schema.json && apollo codegen:generate --localSchemaFile=./src/graph-ql/graphql-schema.json --target=typescript --tagName=gql && rm -rf __generated__"
   },
   "dependencies": {
@@ -27,10 +30,12 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
+    "@typechain/ethers-v5": "^10.2.0",
     "apollo": "^2.34.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "typechain": "^8.1.1"
   },
   "resolutions": {
     "graphql": "^15.8.0"
