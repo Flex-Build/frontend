@@ -1,18 +1,18 @@
 import React from "react";
-import styles from "./DesignYourSite.module.scss";
+import styles from "./LeftContainer.module.scss";
 import { canvasSubject } from "@/src/subjects/canvas";
 import { GET_ALL_COMPONENTS } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/getAllComponents";
 import { GetAllComponents } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
 import { useQuery } from "@apollo/client";
-import Exp from "./TestComponents/Exp";
-import Container from "./TestComponents/Container";
+import Exp from "../TestComponents/Exp";
+import Container from "../TestComponents/Container";
 function LeftContainer() {
   const { data } = useQuery<GetAllComponents>(GET_ALL_COMPONENTS);
 
   return (
     <div className={styles.leftcontainer}>
       Components
-      <div className="h-fit">
+      <div className={styles.complist}>
         <Container
           draggable
           onDragStart={() =>
@@ -40,6 +40,8 @@ function LeftContainer() {
               </div>
             );
           })}
+          
+          
       </div>
     </div>
   );

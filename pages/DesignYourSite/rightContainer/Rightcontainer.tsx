@@ -1,6 +1,6 @@
 import { canvasSubject } from "@/src/subjects/canvas";
 import React, { useEffect, useState } from "react";
-import styles from "./DesignYourSite.module.scss";
+import styles from "./Rightcontainer.module.scss";
 function Rightcontainer() {
   const [componentBeingDrag, setComponentBeingDrag] = useState<JSX.Element>();
   const [components, setComponents] = useState<JSX.Element[]>([]);
@@ -12,7 +12,7 @@ function Rightcontainer() {
       Rightcontainer
       <div
         onDrop={(e) => {
-          const _components = components?.slice();
+          const _components = components?.slice(); 
           if (componentBeingDrag) {
             _components?.push(componentBeingDrag);
             setComponents(_components);

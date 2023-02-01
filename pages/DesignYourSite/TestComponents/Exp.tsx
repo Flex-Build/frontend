@@ -1,6 +1,6 @@
 import { fetchIpfs } from "@/src/services/ipfs/fetchIpfs";
 import React, { useEffect, useState } from "react";
-import Properties from "../Properties";
+import Properties from "../properties/Properties";
 
 type Props = {
   ipfsHash: string;
