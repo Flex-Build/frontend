@@ -168,7 +168,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash",
+            "name": "code_uri",
             "description": null,
             "args": [],
             "type": {
@@ -605,7 +605,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash",
+            "name": "code_uri",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -617,7 +617,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not",
+            "name": "code_uri_not",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -629,7 +629,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_gt",
+            "name": "code_uri_gt",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -641,7 +641,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_lt",
+            "name": "code_uri_lt",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -653,7 +653,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_gte",
+            "name": "code_uri_gte",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -665,7 +665,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_lte",
+            "name": "code_uri_lte",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -677,7 +677,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_in",
+            "name": "code_uri_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -697,7 +697,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_in",
+            "name": "code_uri_not_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -717,7 +717,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_contains",
+            "name": "code_uri_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -729,7 +729,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_contains_nocase",
+            "name": "code_uri_contains_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -741,7 +741,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_contains",
+            "name": "code_uri_not_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -753,7 +753,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_contains_nocase",
+            "name": "code_uri_not_contains_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -765,7 +765,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_starts_with",
+            "name": "code_uri_starts_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -777,7 +777,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_starts_with_nocase",
+            "name": "code_uri_starts_with_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -789,7 +789,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_starts_with",
+            "name": "code_uri_not_starts_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -801,7 +801,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_starts_with_nocase",
+            "name": "code_uri_not_starts_with_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -813,7 +813,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_ends_with",
+            "name": "code_uri_ends_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -825,7 +825,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_ends_with_nocase",
+            "name": "code_uri_ends_with_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -837,7 +837,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_ends_with",
+            "name": "code_uri_not_ends_with",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -849,7 +849,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash_not_ends_with_nocase",
+            "name": "code_uri_not_ends_with_nocase",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -1011,7 +1011,7 @@
             "deprecationReason": null
           },
           {
-            "name": "code_hash",
+            "name": "code_uri",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

@@ -4,7 +4,7 @@ export const GET_ALL_COMPONENTS = gql`
   query GetAllComponents {
     components {
     id
-    code_hash
+    code_uri
     price
   }
 }`

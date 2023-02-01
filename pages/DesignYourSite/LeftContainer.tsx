@@ -30,13 +30,13 @@ function LeftContainer() {
                   canvasSubject.next(
                     <Exp
                       key={Math.random().toString() + Date.now()}
-                      ipfsHash={e.code_hash}
+                      ipfsHash={e.code_uri}
                     />
                   )
                 }
                 key={e.id.toString()}
               >
-                <Exp ipfsHash={e.code_hash} />
+                <Exp ipfsHash={e.code_uri} />
               </div>
             );
           })}

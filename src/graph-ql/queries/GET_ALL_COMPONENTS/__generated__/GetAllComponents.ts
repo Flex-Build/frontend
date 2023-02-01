@@ -10,7 +10,7 @@
 export interface GetAllComponents_components {
   __typename: "Component";
   id: string;
-  code_hash: string;
+  code_uri: string;
   price: any;
 }
 

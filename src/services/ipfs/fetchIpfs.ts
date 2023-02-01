@@ -1,8 +1,10 @@
 // helper function to transform uri with this format: ipfs://
 export async function fetchIpfs<T>(ipfsUrl: string, isString?: Boolean): Promise<T | undefined> {
+    if (!ipfsUrl.startsWith("ipfs://")) return undefined
+
     const url = ipfsToHttps(ipfsUrl)
     const fetchRes = await fetch(url);
-    if (!ipfsUrl.startsWith("ipfs://")) return undefined
+
     try {
         if (isString) {
             const fetchText = await fetchRes.text();
@@ -12,7 +14,6 @@ export async function fetchIpfs<T>(ipfsUrl: string, isString?: Boolean): Promise
         return fetchJson as T
     } catch (error) {
         console.log("error max");
-
         return undefined
     }
 }
