@@ -36,6 +36,9 @@ function Navbar() {
           <li className="mr-5 w-fit lg:mr-10 my-4 text-lg">
             <Link href="/DesignYourSite">YourDesign</Link>
           </li>
+          <li className="mr-5 w-80 lg:mr-10 my-4 text-lg flex">
+            <Link href="/WriteAComponent">WriteAComponent</Link>
+          </li>
         </div>
 
         <div className="lg:hidden  md:hidden">
@@ -74,6 +77,14 @@ function Navbar() {
                     Your Design
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/DesignYourSite"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >
+                    Write A Component
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -81,7 +92,7 @@ function Navbar() {
 
         <div className="  w-full flex justify-end">
           <li className="mr-3 lg:mr-6 text-right  ">
-            <div className="py-3">{ <ConnectButton></ConnectButton>}</div>
+            <div className="py-3">{<ConnectButton></ConnectButton>}</div>
           </li>
         </div>
       </ul>
