@@ -11,7 +11,7 @@ function Properties() {
         <h6 className={styles.propertyname}>Properties</h6>
         <button onClick={() => (display ? setDisplay(false) : setDisplay(true))} className={styles.cross}>X</button>
         </div>
-        <hr />
+        <hr className={styles.hl}/>
         <div className={styles.propertiesContainer}>
           <div className="flex m-2">
             <p className={styles.PropertyLable}>width</p>
@@ -29,7 +29,7 @@ function Properties() {
           </div>
         </div>
 
-        <button>publish</button>
+        <button className={styles.publishBtn} >publish</button>
       </div>
       :
       <button className={styles.displayBtn} onClick={() => (display ? setDisplay(false) : setDisplay(true))}>properties</button>}
