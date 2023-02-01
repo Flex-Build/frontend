@@ -46,4 +46,23 @@
     border-left: 20px;
     border-color:gray ;
     background-color: darkgray;
+    padding: 0.2%;
 }
+
+
+.propertyname{
+    text-align: center;
+    margin: 5%;
+}
+
+.propertiesContainer{
+    height:49%;
+    width: 100%;
+    margin-right: 1%;
+    margin-left: 1%;
+    // background-color: black;
+    overflow: scroll;
+}
+.propertiesContainer::-webkit-scrollbar {
+    display: none;
+  }
