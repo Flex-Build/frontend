@@ -1,5 +1,6 @@
 import { fetchIpfs } from "@/src/services/ipfs/fetchIpfs";
 import React, { useEffect, useState } from "react";
+import Properties from "../Properties";
 
 type Props = {
   ipfsHash: string;
@@ -15,11 +16,14 @@ const Exp = (p: Props) => {
     });
   }, []);
   return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: htmlString,
-      }}
-    ></div>
+    <>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: htmlString,
+        }}
+      ></div>
+      <Properties />
+    </>
   );
 };
 

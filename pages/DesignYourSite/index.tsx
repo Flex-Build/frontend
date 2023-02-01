@@ -13,7 +13,6 @@ function index() {
       <div className={styles.maincontainer}>
         <LeftContainer />
         <Rightcontainer />
-        <Properties/>
       </div>
     </div>
   );
