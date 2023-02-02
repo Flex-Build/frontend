@@ -14,18 +14,24 @@ function LeftContainer() {
       <p className={styles.compName}>Components</p>
 
       <div className={styles.complist}>
+        <p className={styles.componentName}>Container</p>
+        <div className={styles.componentCard}>
         <Container
           draggable
           onDragStart={() =>
             canvasSubject.next(
-              <Container key={"container" + Math.random().toString()} />
+              <Container key={"Container" + Math.random().toString()} />
             )
           }
         />
+        </div>
         {data &&
           data.components.map((e) => {
-            return (
-              <div
+            return (<div >
+            <p className={styles.componentName}>name</p>
+            <div
+                // className={styles.compBody}
+                className={styles.componentCard}
                 draggable
                 onDragStart={() =>
                   canvasSubject.next(
@@ -42,6 +48,7 @@ function LeftContainer() {
                       id={e.id}
                 />
               </div>
+            </div>
             );
           })}
           

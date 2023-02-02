@@ -7,10 +7,11 @@ function Rightcontainer() {
   useEffect(() => {
     canvasSubject.subscribe(setComponentBeingDrag);
   }, []);
+  console.log(components);
   
   return (
     <div className={styles.rightcontainer}>
-      Rightcontainer
+      <p className={styles.previewName}>Preview</p>
       <div
       placeholder="drag here"
         onDrop={(e) => {
