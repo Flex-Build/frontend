@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 function Navbar() {
   const [usedisplay, setusediplay] = useState(false);
@@ -27,16 +27,19 @@ function Navbar() {
     <div>
       <ul
         id="nav"
-        className=" flex content-center w-full bg-black text-white fixed h-16 "
+        className=" flex content-center w-full bg-white text-black fixed h-16 border-solid border-2 border-black"
       >
         <div className="hidden sm:contents">
           <li className="mr-5 lg:mr-8 ml-6  my-4 text-lg">
-            <Link href="#">Home</Link>
+            <h1 className="text-block">
+              <a className="text-green-500">Flexi</a>
+              <a className="text-black">Build</a>
+            </h1>
           </li>
-          <li className="mr-5 w-fit lg:mr-10 my-4 text-lg">
+          <li className="mx-5 py-4 px-2 text-lg hover:border-b-4 border-green-500">
             <Link href="/DesignYourSite">YourDesign</Link>
           </li>
-          <li className="mr-5 w-80 lg:mr-10 my-4 text-lg flex">
+          <li className="mx-5 py-4 px-2 text-lg hover:border-b-4 border-green-500 ">
             <Link href="/WriteAComponent">WriteAComponent</Link>
           </li>
         </div>
@@ -79,7 +82,7 @@ function Navbar() {
                 </li>
                 <li>
                   <Link
-                    href="/DesignYourSite"
+                    href="/WriteAComponent"
                     className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                   >
                     Write A Component
