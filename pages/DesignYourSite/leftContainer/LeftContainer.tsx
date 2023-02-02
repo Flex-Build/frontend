@@ -11,7 +11,8 @@ function LeftContainer() {
 
   return (
     <div className={styles.leftcontainer}>
-      Components
+      <p className={styles.compName}>Components</p>
+
       <div className={styles.complist}>
         <Container
           draggable

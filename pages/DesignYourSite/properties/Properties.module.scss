@@ -1,5 +1,5 @@
 .propertiesSection {
-    width: fit;
+    width: fit-content ;
     border-left: 20px;
     border-color: gray;
     background-color: #E4F5EB;
@@ -54,13 +54,10 @@
     font-size: larger;
     border-radius: 8px;
     color: white;
-    // margin-left: 50%;
-    // margin-right: 50%;
-    // left:10;
-    // right:10;
     text-align: center;
     
 }
+
 
 .propertyname {
     text-align: center;

@@ -7,10 +7,12 @@ function Rightcontainer() {
   useEffect(() => {
     canvasSubject.subscribe(setComponentBeingDrag);
   }, []);
+  
   return (
     <div className={styles.rightcontainer}>
       Rightcontainer
       <div
+      placeholder="drag here"
         onDrop={(e) => {
           const _components = components?.slice(); 
           if (componentBeingDrag) {
@@ -25,7 +27,11 @@ function Rightcontainer() {
         }}
         className={styles.sitepreview}
       >
-        {components}
+        {components.length===0?
+        <div className={styles.dragHere}>
+          <img src="https://cdn-icons-png.flaticon.com/512/6591/6591195.png" className={styles.dragimg} alt="" />
+        </div>:
+        components}
       </div>
     </div>
   );
