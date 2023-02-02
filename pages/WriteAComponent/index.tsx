@@ -3,6 +3,7 @@ import { createComponent } from "@/src/services/ipfs/smart-contract/create-compo
 import React, { useState } from "react";
 import { useSigner } from "wagmi";
 import styles from "./WriteAComponent.module.scss";
+import Editor from "@monaco-editor/react";
 function WriteAComponent() {
   const [code, setCode] = useState("");
   const [price, setPrice] = useState<number>(0);
@@ -18,12 +19,14 @@ function WriteAComponent() {
     <div className={styles.writeAComponentContainer}>
       <Navbar />
       <div className={styles.insertCode}>
-        <textarea
-          placeholder="Write Your Code Here"
-          className={styles.inputArea}
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-        ></textarea>
+        <div style={{ marginTop: "10px" }}></div>
+        <Editor
+          height="40vh"
+          defaultLanguage="html"
+          defaultValue="<p>Hello Flex</p>"
+          onChange={(e) => setCode(e ?? "")}
+          theme="vs-dark"
+        />
         <div className={styles.buttonAndInput}>
           <input
             placeholder="Enter Price"
