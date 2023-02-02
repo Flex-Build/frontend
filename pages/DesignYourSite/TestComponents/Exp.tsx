@@ -1,6 +1,5 @@
 import { fetchIpfs } from "@/src/services/ipfs/fetchIpfs";
 import React, { useEffect, useState } from "react";
-import { createNodeArray } from "typescript";
 import Properties from "../properties/Properties";
 
 type Props = {
