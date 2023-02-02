@@ -20,7 +20,7 @@ const Properties: React.FC<Props> = (p) => {
           </div>
           <hr className={styles.hl} />
           <div className={styles.propertiesContainer}>
-            <div className="flex m-2">
+            <div className="m-2">
               <p className={styles.PropertyLable}>Width</p>
               <input
                 className={styles.inputParemeter}
@@ -36,7 +36,7 @@ const Properties: React.FC<Props> = (p) => {
               ></input>
             </div>
 
-            <div className="flex m-2">
+            <div className="m-2">
               <p className={styles.PropertyLable}>Padding</p>
               <input
                 className={styles.inputParemeter}
@@ -52,7 +52,7 @@ const Properties: React.FC<Props> = (p) => {
               ></input>
             </div>
 
-            <div className="flex m-2">
+            <div className="m-2">
               <p className={styles.PropertyLable}>Rounded</p>
               <input
                 className={styles.inputParemeter}

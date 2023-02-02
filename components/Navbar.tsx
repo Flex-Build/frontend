@@ -32,15 +32,15 @@ function Navbar() {
         <div className="hidden sm:contents">
           <li className="mr-5 lg:mr-8 ml-6  my-4 text-lg">
             <h1 className="text-block">
-              <a className="text-green-500">Flexi</a>
-              <a className="text-black">Build</a>
+              <a className="text-green-500 font-bold">Flexi</a>
+              <a className="text-black ">Build</a>
             </h1>
           </li>
-          <li className="mx-5 py-4 px-2 text-lg hover:border-b-4 border-green-500">
-            <Link href="/DesignYourSite">YourDesign</Link>
+          <li className="mx-5 w-44 py-4 px-2 text-lg hover:border-b-4 border-green-500">
+            <Link href="/design-your-site">Your Design</Link>
           </li>
-          <li className="mx-5 py-4 px-2 text-lg hover:border-b-4 border-green-500 ">
-            <Link href="/WriteAComponent">WriteAComponent</Link>
+          <li className="mx-5 w-72 py-4 px-2 text-lg hover:border-b-4 border-green-500 ">
+            <Link href="/write-a-component">Write A Component</Link>
           </li>
         </div>
 
