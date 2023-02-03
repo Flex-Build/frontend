@@ -18,16 +18,12 @@ function LeftContainer() {
         <div className={styles.componentCard}>
           <Container draggable onDragStart={() => canvasSubject.next(true)} />
         </div>
-        <div className={styles.componentCard}>
-          <Container draggable onDragStart={() => canvasSubject.next(true)} />
-        </div>
         {data &&
           data.components.map((e) => {
             return (
               <div key={e.id.toString()}>
                 <p className={styles.componentName}>name</p>
                 <div
-                  // className={styles.compBody}
                   className={styles.componentCard}
                   draggable
                   onDragStart={() => canvasSubject.next(e)}
