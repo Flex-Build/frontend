@@ -22,7 +22,6 @@ export const encapsulateCss = (htmlString: string, id: string) => {
             }
         }
     }
-    console.log(classNames);
     classNames.forEach(cN => {
         // const regexExp = `/\\.${cN}|"${cN}| ${cN} |${cN}"/i`;
         const regexExpStr = `\\.${cN}`;
@@ -39,7 +38,6 @@ export const encapsulateCss = (htmlString: string, id: string) => {
         const regexExpStr = ` ${cN} `;
         const regexExp = new RegExp(regexExpStr, "g");
         htmlString = htmlString.replaceAll(regexExp, " " + cN + id + " ");
-        console.log(htmlString);
     })
 
     return htmlString;
