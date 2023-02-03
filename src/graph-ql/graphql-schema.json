@@ -983,6 +983,38 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "and",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "Component_filter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "or",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "Component_filter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "interfaces": null,
@@ -2362,6 +2394,38 @@
               "kind": "INPUT_OBJECT",
               "name": "BlockChangedFilter",
               "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "and",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "User_filter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "or",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "User_filter",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
