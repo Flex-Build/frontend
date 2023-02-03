@@ -41,7 +41,7 @@ function Navbar() {
             <Link href="/design-your-site">Your Design</Link>
           </li>
           <li className="mx-5 w-72 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 ">
-            <Link href="/write-a-component">Write A Component</Link>
+            <Link href="/write-a-component">Create Component</Link>
           </li>
         </div>
 
