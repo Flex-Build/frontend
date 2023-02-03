@@ -28,10 +28,27 @@ import type {
   PromiseOrValue,
 } from "./common";
 
+export declare namespace FlexBuild {
+  export type ComponentStruct = {
+    owner: PromiseOrValue<string>;
+    code_hash: PromiseOrValue<string>;
+    price: PromiseOrValue<BigNumberish>;
+    name: PromiseOrValue<string>;
+  };
+
+  export type ComponentStructOutput = [string, string, BigNumber, string] & {
+    owner: string;
+    code_hash: string;
+    price: BigNumber;
+    name: string;
+  };
+}
+
 export interface FlexBuildInterface extends utils.Interface {
   functions: {
     "buyComponents(uint256[])": FunctionFragment;
-    "createComponent(string,uint256)": FunctionFragment;
+    "createComponent(string,uint256,string)": FunctionFragment;
+    "getComponents()": FunctionFragment;
     "id_to_component(uint256)": FunctionFragment;
     "id_to_order(uint256)": FunctionFragment;
   };
@@ -40,6 +57,7 @@ export interface FlexBuildInterface extends utils.Interface {
     nameOrSignatureOrTopic:
       | "buyComponents"
       | "createComponent"
+      | "getComponents"
       | "id_to_component"
       | "id_to_order"
   ): FunctionFragment;
@@ -50,7 +68,15 @@ export interface FlexBuildInterface extends utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "createComponent",
-    values: [PromiseOrValue<string>, PromiseOrValue<BigNumberish>]
+    values: [
+      PromiseOrValue<string>,
+      PromiseOrValue<BigNumberish>,
+      PromiseOrValue<string>
+    ]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "getComponents",
+    values?: undefined
   ): string;
   encodeFunctionData(
     functionFragment: "id_to_component",
@@ -67,6 +93,10 @@ export interface FlexBuildInterface extends utils.Interface {
   ): Result;
   decodeFunctionResult(
     functionFragment: "createComponent",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "getComponents",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
@@ -80,7 +110,7 @@ export interface FlexBuildInterface extends utils.Interface {
 
   events: {
     "ComponentBought(address,uint256)": EventFragment;
-    "ComponentCreated(address,string,uint256,uint256)": EventFragment;
+    "ComponentCreated(address,string,uint256,uint256,string)": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "ComponentBought"): EventFragment;
@@ -103,9 +133,10 @@ export interface ComponentCreatedEventObject {
   code_hash: string;
   price: BigNumber;
   id: BigNumber;
+  name: string;
 }
 export type ComponentCreatedEvent = TypedEvent<
-  [string, string, BigNumber, BigNumber],
+  [string, string, BigNumber, BigNumber, string],
   ComponentCreatedEventObject
 >;
 
@@ -147,17 +178,23 @@ export interface FlexBuild extends BaseContract {
     createComponent(
       code_hash: PromiseOrValue<string>,
       price: PromiseOrValue<BigNumberish>,
+      name: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<ContractTransaction>;
+
+    getComponents(
+      overrides?: CallOverrides
+    ): Promise<[FlexBuild.ComponentStructOutput[]]>;
 
     id_to_component(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<
-      [string, string, BigNumber] & {
+      [string, string, BigNumber, string] & {
         owner: string;
         code_hash: string;
         price: BigNumber;
+        name: string;
       }
     >;
 
@@ -177,17 +214,23 @@ export interface FlexBuild extends BaseContract {
   createComponent(
     code_hash: PromiseOrValue<string>,
     price: PromiseOrValue<BigNumberish>,
+    name: PromiseOrValue<string>,
     overrides?: Overrides & { from?: PromiseOrValue<string> }
   ): Promise<ContractTransaction>;
+
+  getComponents(
+    overrides?: CallOverrides
+  ): Promise<FlexBuild.ComponentStructOutput[]>;
 
   id_to_component(
     arg0: PromiseOrValue<BigNumberish>,
     overrides?: CallOverrides
   ): Promise<
-    [string, string, BigNumber] & {
+    [string, string, BigNumber, string] & {
       owner: string;
       code_hash: string;
       price: BigNumber;
+      name: string;
     }
   >;
 
@@ -205,17 +248,23 @@ export interface FlexBuild extends BaseContract {
     createComponent(
       code_hash: PromiseOrValue<string>,
       price: PromiseOrValue<BigNumberish>,
+      name: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    getComponents(
+      overrides?: CallOverrides
+    ): Promise<FlexBuild.ComponentStructOutput[]>;
 
     id_to_component(
       arg0: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<
-      [string, string, BigNumber] & {
+      [string, string, BigNumber, string] & {
         owner: string;
         code_hash: string;
         price: BigNumber;
+        name: string;
       }
     >;
 
@@ -237,17 +286,19 @@ export interface FlexBuild extends BaseContract {
       component_id?: null
     ): ComponentBoughtEventFilter;
 
-    "ComponentCreated(address,string,uint256,uint256)"(
+    "ComponentCreated(address,string,uint256,uint256,string)"(
       owner?: null,
       code_hash?: null,
       price?: null,
-      id?: null
+      id?: null,
+      name?: null
     ): ComponentCreatedEventFilter;
     ComponentCreated(
       owner?: null,
       code_hash?: null,
       price?: null,
-      id?: null
+      id?: null,
+      name?: null
     ): ComponentCreatedEventFilter;
   };
 
@@ -260,8 +311,11 @@ export interface FlexBuild extends BaseContract {
     createComponent(
       code_hash: PromiseOrValue<string>,
       price: PromiseOrValue<BigNumberish>,
+      name: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<BigNumber>;
+
+    getComponents(overrides?: CallOverrides): Promise<BigNumber>;
 
     id_to_component(
       arg0: PromiseOrValue<BigNumberish>,
@@ -283,8 +337,11 @@ export interface FlexBuild extends BaseContract {
     createComponent(
       code_hash: PromiseOrValue<string>,
       price: PromiseOrValue<BigNumberish>,
+      name: PromiseOrValue<string>,
       overrides?: Overrides & { from?: PromiseOrValue<string> }
     ): Promise<PopulatedTransaction>;
+
+    getComponents(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     id_to_component(
       arg0: PromiseOrValue<BigNumberish>,

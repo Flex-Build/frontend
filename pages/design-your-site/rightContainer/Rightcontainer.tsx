@@ -1,15 +1,23 @@
+import { FlexBuild } from "@/src/contracts";
 import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
+import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
 import { canvasSubject } from "@/src/subjects/canvas";
 import React, { useEffect, useState } from "react";
+import { useSigner } from "wagmi";
 import Container from "../TestComponents/Container";
 import Exp from "../TestComponents/Exp/Exp";
 import styles from "./Rightcontainer.module.scss";
-function Rightcontainer() {
+
+type Props = {
+  htmlgen?: (a: string) => void;
+};
+
+const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
   const [componentBeingDrag, setComponentBeingDrag] = useState<
-    GetAllComponents_components | boolean
+    FlexBuild.ComponentStructOutput | boolean
   >();
   const [components, setComponents] = useState<
-    (GetAllComponents_components | boolean)[]
+    (FlexBuild.ComponentStructOutput | boolean)[]
   >([]);
 
   const [finalHtml, setFinalHtml] = useState<string[]>([]);
@@ -17,6 +25,22 @@ function Rightcontainer() {
     const the_html = finalHtml.slice();
     the_html[i] = a;
 
+    const style_tag = `
+         <style>
+      .container {
+        flex: 1;
+        width: 100%;
+        height: 20vh;
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: rgba(0, 0, 0, 0.329);
+        display: flex;
+        border-style: dotted;
+    }
+    </style>
+    `;
+
+    htmlgen?.(the_html.join("") + style_tag);
     setFinalHtml(the_html);
   };
   useEffect(() => {
@@ -63,18 +87,16 @@ function Rightcontainer() {
             return (
               <Exp
                 key={i}
-                id={e.id}
+                id={i.toString()}
                 htmlGen={(a) => handleHtmlRender(i, a)}
-                ipfsHash={e.code_uri}
+                ipfsHash={"ipfs://" + e.code_hash}
               />
             );
           })
         )}
       </div>
-      {/* <button className={styles.publishBtn}>publish</button> */}
-      
     </div>
   );
-}
+};
 
 export default Rightcontainer;

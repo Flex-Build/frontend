@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LeftContainer.module.scss";
 import { canvasSubject } from "@/src/subjects/canvas";
-import { GET_ALL_COMPONENTS } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/getAllComponents";
-import { GetAllComponents } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
-import { useQuery } from "@apollo/client";
 import Exp from "../TestComponents/Exp/Exp";
 import Container from "../TestComponents/Container";
+import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
+import { useProvider, useSigner } from "wagmi";
+import { FlexBuild } from "@/src/contracts";
 function LeftContainer() {
-  const { data } = useQuery<GetAllComponents>(GET_ALL_COMPONENTS);
+  const [components, setComponents] = useState<
+    FlexBuild.ComponentStructOutput[]
+  >([]);
 
+  const provider = useProvider();
+  useEffect(() => {
+    getComponents(provider).then((e) => {
+      if (e) setComponents(e);
+    });
+  }, []);
   return (
     <div className={styles.leftcontainer}>
       <p className={styles.compName}>Components</p>
@@ -18,17 +26,17 @@ function LeftContainer() {
         <div className={styles.componentCard}>
           <Container draggable onDragStart={() => canvasSubject.next(true)} />
         </div>
-        {data &&
-          data.components.map((e) => {
+        {components &&
+          components.map((e, i) => {
             return (
-              <div key={e.id.toString()}>
-                <p className={styles.componentName}>name</p>
+              <div key={i}>
+                <p className={styles.componentName}>{e.name}</p>
                 <div
                   className={styles.componentCard}
                   draggable
                   onDragStart={() => canvasSubject.next(e)}
                 >
-                  <Exp ipfsHash={e.code_uri} id={e.id} />
+                  <Exp ipfsHash={"ipfs://" + e.code_hash} id={i.toString()} />
                 </div>
               </div>
             );

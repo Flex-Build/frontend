@@ -8,28 +8,8 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { polygonMumbai } from 'wagmi/chains';
 import { publicProvider } from "wagmi/providers/public";
-
-const { chains, provider } = configureChains(
-  [
-    polygonMumbai
-  ],
-  [publicProvider()]
-);
-
-const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
-  chains
-});
-
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider
-})
-
-
+import { Chains, wagmiClient } from "@/walletConfig";
 
 export default function App({ Component, pageProps }: AppProps) {
   const client = new ApolloClient({
@@ -38,12 +18,11 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
+      <RainbowKitProvider chains={Chains}>
         <ApolloProvider client={client}>
           <Component {...pageProps} />
         </ApolloProvider>
       </RainbowKitProvider>
     </WagmiConfig>
-
   );
 }

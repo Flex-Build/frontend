@@ -11,7 +11,7 @@ function WriteAComponent() {
 
   const onUpload = () => {
     if (!price || !signer) return;
-    createComponent(code, price, signer).then((e) => {
+    createComponent("Name ata nay", code, price, signer).then((e) => {
       console.log(e?.transactionHash);
     });
   };

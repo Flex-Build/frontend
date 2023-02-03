@@ -1,3 +1,4 @@
+import { FlexBuild } from "@/src/contracts";
 import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
 import { canvasSubject } from "@/src/subjects/canvas";
 import React, { useEffect, useState } from "react";
@@ -9,10 +10,10 @@ const Container: React.FC<
   }
 > = ({ htmlgen, ...p }) => {
   const [componentBeingDrag, setComponentBeingDrag] = useState<
-    GetAllComponents_components | boolean
+    FlexBuild.ComponentStructOutput | boolean
   >();
   const [components, setComponents] = useState<
-    (GetAllComponents_components | boolean)[]
+    (FlexBuild.ComponentStructOutput | boolean)[]
   >([]);
 
   const [finalHtml, setFinalHtml] = useState<string[]>([]);
@@ -21,7 +22,7 @@ const Container: React.FC<
     const the_html = finalHtml.slice();
     the_html[i] = a;
     setFinalHtml(the_html);
-    htmlgen?.(the_html.join(""));
+    htmlgen?.('<div class="container">' + the_html.join("") + "</div>");
   };
   useEffect(() => {
     canvasSubject.subscribe(setComponentBeingDrag);
@@ -58,9 +59,9 @@ const Container: React.FC<
           return (
             <Exp
               key={i}
-              id={e.id}
+              id={i.toString()}
               htmlGen={(a) => handleHtmlRender(i, a)}
-              ipfsHash={e.code_uri}
+              ipfsHash={"ipfs://" + e.code_hash}
             />
           );
         })}
