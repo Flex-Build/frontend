@@ -1,8 +1,8 @@
 import { FlexBuild__factory } from "@/src/contracts";
 import { FetchSignerResult } from "@wagmi/core";
-import { Signer } from "ethers";
+import type { Provider } from "@ethersproject/providers";
 
-export const getComponents = async (signer: FetchSignerResult<Signer>) => {
+export const getComponents = async (signer: Provider) => {
     if (!signer) {
         //TODO: error
         return;

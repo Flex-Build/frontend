@@ -4,17 +4,16 @@ import { canvasSubject } from "@/src/subjects/canvas";
 import Exp from "../TestComponents/Exp/Exp";
 import Container from "../TestComponents/Container";
 import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
-import { useSigner } from "wagmi";
+import { useProvider, useSigner } from "wagmi";
 import { FlexBuild } from "@/src/contracts";
 function LeftContainer() {
   const [components, setComponents] = useState<
     FlexBuild.ComponentStructOutput[]
   >([]);
 
-  const { data: signer } = useSigner();
+  const provider = useProvider();
   useEffect(() => {
-    if (!signer) return;
-    getComponents(signer).then((e) => {
+    getComponents(provider).then((e) => {
       if (e) setComponents(e);
     });
   }, []);

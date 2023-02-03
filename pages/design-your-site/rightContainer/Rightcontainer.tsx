@@ -19,16 +19,7 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
   const [components, setComponents] = useState<
     (FlexBuild.ComponentStructOutput | boolean)[]
   >([]);
-  const { data: signer } = useSigner();
 
-  useEffect(() => {
-    if (!signer) return;
-    getComponents(signer).then((e) => {
-      if (e != undefined) {
-        setComponents(e);
-      }
-    });
-  }, []);
   const [finalHtml, setFinalHtml] = useState<string[]>([]);
   const handleHtmlRender = (i: number, a: string) => {
     const the_html = finalHtml.slice();
