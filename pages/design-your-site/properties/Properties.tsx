@@ -76,7 +76,7 @@ const Properties: React.FC<Props> = (p) => {
             )}
           </div>
 
-          <button className={styles.publishBtn}>publish</button>
+          
         </div>
       )}
     </>

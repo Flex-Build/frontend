@@ -28,6 +28,7 @@ function WriteAComponent() {
           theme="vs-dark"
         />
         <div className={styles.buttonAndInput}>
+          <p className={styles.pricelabel}>Price</p>
           <input
             placeholder="Enter Price"
             type="number"

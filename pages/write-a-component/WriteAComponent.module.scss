@@ -11,19 +11,24 @@
     padding-right: 10%;
 }
 
-.inputArea{
+.pricelabel{
     margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.inputArea{
     height: 80%;
     width: 100%;
     background-color: white;
+    
 }
 
 .priceInput{
     align-items: center;
-    // margin-left: auto;
-    // margin-right: auto;
     width: 10%;
-    margin-top: 2%;
+    // margin-top: 2%;
     padding: 1%;
 }
 

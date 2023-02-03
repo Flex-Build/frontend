@@ -71,6 +71,7 @@ function Rightcontainer() {
           })
         )}
       </div>
+      <button className={styles.publishBtn}>publish</button>
     </div>
   );
 }
