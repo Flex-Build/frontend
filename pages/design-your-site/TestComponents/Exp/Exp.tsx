@@ -41,7 +41,7 @@ const Exp = (p: Props) => {
         const parsed = mus.parse(encapsulated_css);
         parsed.forEach((e) => {
           if (e[0] == "name") {
-            _extraProps[e[1]] = "Hello World";
+            _extraProps[e[1]] = "#"+e[1];
           }
         });
         const rendered = mus.render(encapsulated_css, _extraProps);
