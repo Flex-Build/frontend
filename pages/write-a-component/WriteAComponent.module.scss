@@ -5,10 +5,13 @@
 
 .insertCode{
     padding-top: 4rem;
-    background: gold;
     height: 100%;
     padding-left: 10%;
     padding-right: 10%;
+    background: #1D976C;
+    background: -webkit-linear-gradient(to right, #93F9B9, #1D976C); 
+    background: linear-gradient(to right, #93F9B9, #1D976C);
+
 }
 
 .pricelabel{
@@ -38,8 +41,13 @@
 
 .upload{
     margin-left: 2%;
-    background-color: green;
+    background-color: rgba(24, 155, 24, 0.936);
     padding: 1%;
     border-radius: 5px;
     color: white;
+    transition: 0.2s;
+
+    &:hover{
+      background-color: green;
+    }
 }

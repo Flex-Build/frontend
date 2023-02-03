@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const [usedisplay, setusediplay] = useState(false);
@@ -38,10 +37,10 @@ function Navbar() {
               <a className="text-black logo">Build</a>
             </h1>
           </li>
-          <li className="mx-5 w-44 py-4 px-2 text-lg hover:border-b-4 border-green-500">
+          <li className="mx-5 w-44 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500">
             <Link href="/design-your-site">Your Design</Link>
           </li>
-          <li className="mx-5 w-72 py-4 px-2 text-lg hover:border-b-4 border-green-500 ">
+          <li className="mx-5 w-72 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 ">
             <Link href="/write-a-component">Write A Component</Link>
           </li>
         </div>

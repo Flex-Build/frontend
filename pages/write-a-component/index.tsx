@@ -19,7 +19,7 @@ function WriteAComponent() {
     <div className={styles.writeAComponentContainer}>
       <Navbar />
       <div className={styles.insertCode}>
-        <div style={{ marginTop: "10px" }}></div>
+        <div style={{ marginTop: "10px"}}></div>
         <Editor
           height="40vh"
           defaultLanguage="html"

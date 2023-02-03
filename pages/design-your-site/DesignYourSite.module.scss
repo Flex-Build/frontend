@@ -17,7 +17,7 @@
     border-radius: 8px;
     color: white;
     text-align: center;
-    background-color: rgba(33, 179, 33, 0.936);
+    background-color: rgba(24, 155, 24, 0.936);
     padding: 10px 17px;
     border-radius: 7px;
     border: none;
@@ -27,6 +27,7 @@
 
   &:hover{
     transform: scale(0.9);
+    background-color: green;
   }
     
 }
