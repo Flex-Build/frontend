@@ -10,22 +10,20 @@
 .publishBtn{
     position: absolute;
     bottom: 2rem;
-    right: 3rem;
-    background-color: #73AD21;
+    left: 55%;
     width: 200px;
     padding: 1%;
     font-size: larger;
     border-radius: 8px;
     color: white;
     text-align: center;
-
-  background-color: rgba(33, 179, 33, 0.936);
-  padding: 10px 17px;
-  border-radius: 7px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
+    background-color: rgba(33, 179, 33, 0.936);
+    padding: 10px 17px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
 
   &:hover{
     transform: scale(0.9);
