@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const [usedisplay, setusediplay] = useState(false);
@@ -27,13 +28,14 @@ function Navbar() {
     <div>
       <ul
         id="nav"
-        className=" flex content-center w-full bg-white text-black fixed h-16 border-solid border-2 border-black"
+        // className=" flex content-center w-full bg-white text-black fixed h-16 border-solid border-b-2 border-black"
+        className=" flex content-center w-full bg-white text-black fixed h-16 shadow-md"
       >
         <div className="hidden sm:contents">
           <li className="mr-5 lg:mr-8 ml-6  my-4 text-lg">
             <h1 className="text-block">
-              <a className="text-green-500 font-bold">Flexi</a>
-              <a className="text-black ">Build</a>
+              <a className="text-green-500 logo">Flex</a>
+              <a className="text-black logo">Build</a>
             </h1>
           </li>
           <li className="mx-5 w-44 py-4 px-2 text-lg hover:border-b-4 border-green-500">
