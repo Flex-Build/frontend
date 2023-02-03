@@ -21,7 +21,7 @@ const Container: React.FC<
     const the_html = finalHtml.slice();
     the_html[i] = a;
     setFinalHtml(the_html);
-    htmlgen?.(the_html.join(""));
+    htmlgen?.("<div class=\"container\">"+the_html.join("")+"</div>");
   };
   useEffect(() => {
     canvasSubject.subscribe(setComponentBeingDrag);
