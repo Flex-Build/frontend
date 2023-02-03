@@ -3,11 +3,23 @@
     width: 100vw;
     background-color: antiquewhite;
     // overflow: scroll;
-    position:absolute;
+    // position:absolute;
     position: relative;
 } 
 
-
+.publishBtn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #73AD21;
+    width: 200px;
+    padding: 1%;
+    font-size: larger;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    
+}
 
 .maincontainer{
     display:flex;
