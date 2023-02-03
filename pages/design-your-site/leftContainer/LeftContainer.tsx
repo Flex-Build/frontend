@@ -30,7 +30,7 @@ function LeftContainer() {
           components.map((e, i) => {
             return (
               <div key={i}>
-                <p className={styles.componentName}>name</p>
+                <p className={styles.componentName}>{e.name}</p>
                 <div
                   className={styles.componentCard}
                   draggable
