@@ -12,7 +12,7 @@ type Props = {
   htmlgen?: (a: string) => void;
 };
 
-const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
+const Rightcontainer: React.FC<Props> = ({ htmlgen}) => {
   const [componentBeingDrag, setComponentBeingDrag] = useState<
     FlexBuild.ComponentStructOutput | boolean
   >();

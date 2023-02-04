@@ -6283,6 +6283,7 @@ __metadata:
     rxjs: ^7.8.0
     sass: ^1.57.1
     tailwindcss: ^3.2.4
+    three-dots: ^0.3.2
     typechain: ^8.1.1
     typescript: 4.9.4
     wagmi: ^0.11.2
@@ -11409,6 +11410,13 @@ __metadata:
   dependencies:
     real-require: ^0.1.0
   checksum: 0547795a8f357ba1ac0dba29c71f965182e29e21752951a04a7167515ee37524bfba6c410f31e65a01a8d3e5b93400b812889aa09523e38ce4d744c894ffa6c0
+  languageName: node
+  linkType: hard
+
+"three-dots@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "three-dots@npm:0.3.2"
+  checksum: 36f2f319a0325d7a40174e279646b876c2bb90f9178691d4e92c42b64fd52c53aa5ba98dc6fa6a6d0a752228e46d9b27d808a8b4e347347234787d777348521c
   languageName: node
   linkType: hard
 
