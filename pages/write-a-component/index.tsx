@@ -26,7 +26,7 @@ function WriteAComponent() {
   };
   return (
     <div className={styles.writeAComponentContainer}>
-      <Navbar />
+      <Navbar component="wyc"/>
       <div className={styles.insertCode}>
         <div style={{ marginTop: "10px" }}></div>
         <Editor

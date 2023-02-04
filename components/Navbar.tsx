@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-function Navbar() {
+function Navbar({ component }: { component: string }) {
   const [usedisplay, setusediplay] = useState(false);
   const enterd = () => {
     setusediplay(true);
@@ -37,12 +37,16 @@ function Navbar() {
               <a className="text-black logo">Build</a>
             </h1>
           </li>
-          <li className="mx-5 w-44 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 hover:text-red-600">
+          {component==="dys"?<li className="mx-5 w-44 py-4 px-2 text-lg text-center border-b-4 border-green-500 hover:text-red-600">
             <Link href="/design-your-site">Your Design</Link>
-          </li>
-          <li className="mx-5 w-72 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 hover:text-red-600">
+          </li>:<li className="mx-5 w-44 py-4 px-2 text-lg text-center border-green-500 hover:text-red-600">
+            <Link href="/design-your-site">Your Design</Link>
+          </li>}
+          {component==="wyc"?<li className="mx-5 w-72 py-4 px-2 text-lg text-center border-b-4 border-green-500 hover:text-red-600">
             <Link href="/write-a-component">Create Component</Link>
-          </li>
+          </li>:<li className="mx-5 w-72 py-4 px-2 text-lg text-center border-green-500 hover:text-red-600">
+            <Link href="/write-a-component">Create Component</Link>
+          </li>}
         </div>
 
         <div className="lg:hidden  md:hidden">
