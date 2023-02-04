@@ -1,6 +1,7 @@
 import { FlexBuild } from "@/src/contracts";
 import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
 import { canvasSubject, componentAdded } from "@/src/subjects/canvas";
+import { BigNumberish } from "ethers";
 import React, { useEffect, useState } from "react";
 import styles from "./Container.module.scss";
 import Exp from "./Exp/Exp";
@@ -10,10 +11,10 @@ const Container: React.FC<
   }
 > = ({ htmlgen, ...p }) => {
   const [componentBeingDrag, setComponentBeingDrag] = useState<
-    FlexBuild.ComponentStructOutput | boolean
+    [FlexBuild.ComponentStructOutput, BigNumberish] | boolean
   >();
   const [components, setComponents] = useState<
-    (FlexBuild.ComponentStructOutput | boolean)[]
+    ([FlexBuild.ComponentStructOutput, BigNumberish] | boolean)[]
   >([]);
 
   const [finalHtml, setFinalHtml] = useState<string[]>([]);
@@ -38,7 +39,7 @@ const Container: React.FC<
           _components?.push(componentBeingDrag);
           the_html.push("");
           if (typeof componentBeingDrag != "boolean") {
-            componentAdded.next(componentBeingDrag.price);
+            componentAdded.next(componentBeingDrag);
           }
 
           setFinalHtml(the_html);
@@ -65,7 +66,7 @@ const Container: React.FC<
               key={i}
               id={i.toString()}
               htmlGen={(a) => handleHtmlRender(i, a)}
-              ipfsHash={"ipfs://" + e.code_hash}
+              ipfsHash={"ipfs://" + e[0].code_hash}
             />
           );
         })}
