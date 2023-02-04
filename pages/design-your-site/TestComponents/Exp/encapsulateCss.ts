@@ -1,5 +1,4 @@
 export const encapsulateCss = (htmlString: string, id: string) => {
-
     const lines = htmlString.split("\n");
     const styleTag = lines.findIndex((e) => e.includes("<style>"));
     if (styleTag == -1) {
@@ -34,11 +33,11 @@ export const encapsulateCss = (htmlString: string, id: string) => {
         const regexExp = new RegExp(regexExpStr, "g");
         htmlString = htmlString.replaceAll(regexExp, `class="` + cN + id);
     })
-    classNames.forEach(cN => {
-        const regexExpStr = ` ${cN} `;
-        const regexExp = new RegExp(regexExpStr, "g");
-        htmlString = htmlString.replaceAll(regexExp, " " + cN + id + " ");
-    })
+    // classNames.forEach(cN => {
+    //     const regexExpStr = ` ${cN} `;
+    //     const regexExp = new RegExp(regexExpStr, "g");
+    //     htmlString = htmlString.replaceAll(regexExp, " " + cN + id + " ");
+    // })
 
     return htmlString;
 };
