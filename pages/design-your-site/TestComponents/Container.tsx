@@ -1,5 +1,4 @@
 import { FlexBuild } from "@/src/contracts";
-import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
 import { canvasSubject, componentAdded } from "@/src/subjects/canvas";
 import { BigNumberish } from "ethers";
 import React, { useEffect, useState } from "react";

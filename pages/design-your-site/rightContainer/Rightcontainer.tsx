@@ -8,6 +8,7 @@ import { useSigner } from "wagmi";
 import Container from "../TestComponents/Container";
 import Exp from "../TestComponents/Exp/Exp";
 import styles from "./Rightcontainer.module.scss";
+import Image from 'next/image'
 
 type Props = {
   htmlgen?: (a: string) => void;
@@ -80,10 +81,10 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
             <img
               src="https://cdn-icons-png.flaticon.com/512/6591/6591195.png"
               className={styles.dragimg}
-              alt=""
+              alt="img"
             />
-            <p className={styles.Dragdrop}>Drag & drop <br/> components here!</p>
-            {/* <p className={styles.Dragdrop}>components here!</p> */}
+            <p className={styles.Dragdrop}>Drag & drop</p>
+            <p className={styles.Dragdrop}>components here!</p>
           </div>
           
         ) : (

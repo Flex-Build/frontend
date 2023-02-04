@@ -3,12 +3,9 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
-  getDefaultWallets,
   RainbowKitProvider,
-  darkTheme,
 } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
+import { WagmiConfig } from "wagmi";
 import { Chains, wagmiClient } from "@/walletConfig";
 
 export default function App({ Component, pageProps }: AppProps) {

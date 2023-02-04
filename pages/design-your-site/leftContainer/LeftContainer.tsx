@@ -4,7 +4,7 @@ import { canvasSubject } from "@/src/subjects/canvas";
 import Exp from "../TestComponents/Exp/Exp";
 import Container from "../TestComponents/Container";
 import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
-import { useProvider, useSigner } from "wagmi";
+import { useProvider } from "wagmi";
 import { FlexBuild } from "@/src/contracts";
 import { ethers } from "ethers";
 function LeftContainer() {

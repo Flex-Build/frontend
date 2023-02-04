@@ -3,12 +3,10 @@ import { publish_site } from "@/src/apis/axios";
 import { buyComponents } from "@/src/services/ipfs/smart-contract/buy-components";
 import { componentAdded } from "@/src/subjects/canvas";
 import { BigNumber, BigNumberish, ethers } from "ethers";
-import React, { useContext, useEffect, useState } from "react";
-import { DragPreviewImage } from "react-dnd";
+import React, { useEffect, useState } from "react";
 import { useSigner } from "wagmi";
 import styles from "./DesignYourSite.module.scss";
 import LeftContainer from "./leftContainer/LeftContainer";
-import Properties from "./properties/Properties";
 import Rightcontainer from "./rightContainer/Rightcontainer";
 
 function DesignYourSite() {
