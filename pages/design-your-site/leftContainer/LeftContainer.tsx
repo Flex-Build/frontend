@@ -6,6 +6,7 @@ import Container from "../TestComponents/Container";
 import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
 import { useProvider, useSigner } from "wagmi";
 import { FlexBuild } from "@/src/contracts";
+import { ethers } from "ethers";
 function LeftContainer() {
   const [components, setComponents] = useState<
     FlexBuild.ComponentStructOutput[]
@@ -30,7 +31,10 @@ function LeftContainer() {
           components.map((e, i) => {
             return (
               <div key={i}>
+                <div className={styles.nameAndPrice}>
                 <p className={styles.componentName}>{e.name}</p>
+                <p className={styles.itemprice}>{ethers.utils.formatUnits(e.price)+` FIL`}</p>
+                </div>
                 <div
                   className={styles.componentCard}
                   draggable

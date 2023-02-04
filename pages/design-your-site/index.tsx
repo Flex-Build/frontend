@@ -29,16 +29,6 @@ function index() {
               </div>
             </div>
           </div> : null}
-
-
-        {/* {vis?
-        <div className="h-full w-full backdrop-blur-sm absolute top-0">
-        <div className="h-1/6 mx-auto w-2/6 bg-black flex">
-          <input placeholder="Site Name" type="text" className="h-10" onChange={e => setSiteName(e.target.value)}></input>
-          <button className="bg-yellow-500 h-10 px-10">Ok</button>
-          <button className="bg-lime-500 h-10 px-10" onClick={()=>setvis(false)}>cancel</button>
-        </div>
-      </div>:null} */}
       </div>
 
     </div>
