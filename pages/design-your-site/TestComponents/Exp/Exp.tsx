@@ -2,7 +2,7 @@ import { fetchIpfs } from "@/src/services/ipfs/fetchIpfs";
 import React, { useEffect, useState } from "react";
 import Properties from "../../properties/Properties";
 import mus from "mustache";
-import { encapsulateCss } from "./encapsulateCss";
+import { encapsulateCss } from "@/src/services/encapsulateCss";
 type Props = {
   ipfsHash: string;
   id: string;
