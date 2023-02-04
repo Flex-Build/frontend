@@ -17,7 +17,7 @@ function index() {
           <LeftContainer />
           <Rightcontainer />
         </div>
-        <button className={styles.publishBtn} onClick={() => (setvis(true))} >publish</button>
+        <button className={styles.publishBtn} onClick={() => (setvis(true))} >Publish</button>
 
         {vis ?
           <div className={styles.popup1}>
