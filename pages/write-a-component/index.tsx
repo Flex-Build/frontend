@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useSigner } from "wagmi";
 import styles from "./WriteAComponent.module.scss";
 import Editor from "@monaco-editor/react";
+import { ethers } from "ethers";
 function WriteAComponent() {
   const [code, setCode] = useState("");
   const [price, setPrice] = useState<number>(0);
@@ -11,7 +12,8 @@ function WriteAComponent() {
 
   const onUpload = () => {
     if (!price || !signer) return;
-    createComponent("Name ata nay", code, price, signer).then((e) => {
+    const price_BigInt = ethers.utils.parseEther(price.toString());
+    createComponent("Name ata nay", code, price_BigInt, signer).then((e) => {
       console.log(e?.transactionHash);
     });
   };
@@ -19,7 +21,7 @@ function WriteAComponent() {
     <div className={styles.writeAComponentContainer}>
       <Navbar />
       <div className={styles.insertCode}>
-        <div style={{ marginTop: "10px"}}></div>
+        <div style={{ marginTop: "10px" }}></div>
         <Editor
           height="40vh"
           defaultLanguage="html"
