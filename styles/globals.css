@@ -19,3 +19,13 @@ body{
     font-size: 1.5rem;
     font-weight: bolder;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: gray;
+    border: solid 3px white;
+    border-radius: 10px;
+  }
