@@ -76,7 +76,10 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen}) => {
               className={styles.dragimg}
               alt=""
             />
+            <p className={styles.Dragdrop}>Drag & drop</p>
+            <p className={styles.Dragdrop}>components here!</p>
           </div>
+          
         ) : (
           components.map((e, i) => {
             if (typeof e == "boolean") {
