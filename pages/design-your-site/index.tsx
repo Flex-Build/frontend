@@ -29,11 +29,10 @@ function DesignYourSite() {
   };
   useEffect(() => {
     let newTotalPrice = BigNumber.from(totalPrice);
+    const _ids = [...ids];
     componentAdded.subscribe((e) => {
-      const _ids = [...ids];
       _ids.push(e[1]);
       setIds(_ids);
-
       newTotalPrice = newTotalPrice.add(e[0].price);
       setTotalPrice(newTotalPrice);
     });
