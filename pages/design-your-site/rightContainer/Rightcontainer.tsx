@@ -82,8 +82,8 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
               className={styles.dragimg}
               alt=""
             />
-            <p className={styles.Dragdrop}>Drag & drop</p>
-            <p className={styles.Dragdrop}>components here!</p>
+            <p className={styles.Dragdrop}>Drag & drop <br/> components here!</p>
+            {/* <p className={styles.Dragdrop}>components here!</p> */}
           </div>
           
         ) : (
