@@ -21,10 +21,18 @@
     font-weight: bold;
 }
 
+.nameInput{
+    align-items: center;
+    // width: 10%;
+    padding: 1%;
+    border-radius: 10px;
+}
+
 .inputArea{
     height: 80%;
     width: 100%;
     background-color: white;
+    
     
 }
 
@@ -33,6 +41,7 @@
     width: 10%;
     // margin-top: 2%;
     padding: 1%;
+    border-radius: 10px;
 }
 
 .buttonAndInput{
@@ -40,7 +49,7 @@
 }
 
 .upload{
-    margin-left: 2%;
+    margin-left: 2.3%;
     background-color: rgba(24, 155, 24, 0.936);
     padding: 1%;
     border-radius: 5px;
