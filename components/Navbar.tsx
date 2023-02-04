@@ -37,10 +37,10 @@ function Navbar() {
               <a className="text-black logo">Build</a>
             </h1>
           </li>
-          <li className="mx-5 w-44 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500">
+          <li className="mx-5 w-44 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 hover:text-red-600">
             <Link href="/design-your-site">Your Design</Link>
           </li>
-          <li className="mx-5 w-72 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 ">
+          <li className="mx-5 w-72 py-4 px-2 text-lg text-center hover:border-b-4 border-green-500 hover:text-red-600">
             <Link href="/write-a-component">Create Component</Link>
           </li>
         </div>
