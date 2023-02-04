@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Properties from "../../properties/Properties";
 import mus from "mustache";
 import { encapsulateCss } from "./encapsulateCss";
+import { componentAdded } from "@/src/subjects/canvas";
 type Props = {
   ipfsHash: string;
   id: string;

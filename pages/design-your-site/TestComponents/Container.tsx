@@ -1,6 +1,6 @@
 import { FlexBuild } from "@/src/contracts";
 import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
-import { canvasSubject } from "@/src/subjects/canvas";
+import { canvasSubject, componentAdded } from "@/src/subjects/canvas";
 import React, { useEffect, useState } from "react";
 import styles from "./Container.module.scss";
 import Exp from "./Exp/Exp";
@@ -37,6 +37,10 @@ const Container: React.FC<
         if (componentBeingDrag) {
           _components?.push(componentBeingDrag);
           the_html.push("");
+          if (typeof componentBeingDrag != "boolean") {
+            componentAdded.next(componentBeingDrag.price);
+          }
+
           setFinalHtml(the_html);
           setComponents(_components);
         }

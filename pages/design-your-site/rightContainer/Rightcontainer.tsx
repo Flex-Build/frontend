@@ -1,7 +1,8 @@
 import { FlexBuild } from "@/src/contracts";
 import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
 import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
-import { canvasSubject } from "@/src/subjects/canvas";
+import { canvasSubject, componentAdded } from "@/src/subjects/canvas";
+import { BigNumber, BigNumberish } from "ethers";
 import React, { useEffect, useState } from "react";
 import { useSigner } from "wagmi";
 import Container from "../TestComponents/Container";
@@ -12,13 +13,15 @@ type Props = {
   htmlgen?: (a: string) => void;
 };
 
-const Rightcontainer: React.FC<Props> = ({ htmlgen}) => {
+const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
   const [componentBeingDrag, setComponentBeingDrag] = useState<
-    FlexBuild.ComponentStructOutput | boolean
+    [FlexBuild.ComponentStructOutput, BigNumberish] | boolean
   >();
   const [components, setComponents] = useState<
-    (FlexBuild.ComponentStructOutput | boolean)[]
+    ([FlexBuild.ComponentStructOutput, BigNumberish] | boolean)[]
   >([]);
+
+  const [totalPrice, setTotalPrice] = useState(BigNumber.from(0));
 
   const [finalHtml, setFinalHtml] = useState<string[]>([]);
   const handleHtmlRender = (i: number, a: string) => {
@@ -58,6 +61,9 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen}) => {
           if (componentBeingDrag) {
             _components?.push(componentBeingDrag);
             the_html.push("");
+            if (typeof componentBeingDrag != "boolean") {
+              componentAdded.next(componentBeingDrag);
+            }
             setFinalHtml(the_html);
             setComponents(_components);
           }
@@ -92,7 +98,7 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen}) => {
                 key={i}
                 id={i.toString()}
                 htmlGen={(a) => handleHtmlRender(i, a)}
-                ipfsHash={"ipfs://" + e.code_hash}
+                ipfsHash={"ipfs://" + e[0].code_hash}
               />
             );
           })

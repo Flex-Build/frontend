@@ -32,13 +32,15 @@ function LeftContainer() {
             return (
               <div key={i}>
                 <div className={styles.nameAndPrice}>
-                <p className={styles.componentName}>{e.name}</p>
-                <p className={styles.itemprice}>{ethers.utils.formatUnits(e.price)+` FIL`}</p>
+                  <p className={styles.componentName}>{e.name}</p>
+                  <p className={styles.itemprice}>
+                    {ethers.utils.formatUnits(e.price) + ` FIL`}
+                  </p>
                 </div>
                 <div
                   className={styles.componentCard}
                   draggable
-                  onDragStart={() => canvasSubject.next(e)}
+                  onDragStart={() => canvasSubject.next([e, i])}
                 >
                   <Exp ipfsHash={"ipfs://" + e.code_hash} id={i.toString()} />
                 </div>

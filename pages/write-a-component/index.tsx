@@ -9,14 +9,19 @@ import { ethers } from "ethers";
 function WriteAComponent() {
   const [code, setCode] = useState("");
   const [price, setPrice] = useState<number>(0);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { data: signer } = useSigner();
 
   const onUpload = () => {
     if (!price || !signer) return;
     const price_BigInt = ethers.utils.parseEther(price.toString());
+    setIsLoading(true);
     createComponent(name, code, price_BigInt, signer).then((e) => {
       console.log(e?.transactionHash);
+      setIsLoading(false);
+    }).catch(()=>{
+      setIsLoading(false);
     });
   };
   return (
@@ -42,25 +47,27 @@ function WriteAComponent() {
           ></input>
         </div>
 
-
         {/* <input type="text" className={styles.compname} placeholder="Component Name"></input> */}
-
-
         <p className={styles.pricelabel}>Price</p>
-        <input
-          placeholder="Enter Price"
-          type="number"
-          className={styles.priceInput}
-          value={price}
-          onChange={(e) => setPrice(+e.target.value)}
-        ></input>
-        <button className={styles.upload} onClick={onUpload}>
-          {/* Upload */}
-          <div className={styles.loader}> </div>
-        </button>
+
+        <div className="flex">
+          <input
+            placeholder="Enter Price"
+            type="number"
+            className={styles.priceInput}
+            value={price}
+            onChange={(e) => setPrice(+e.target.value)}
+          ></input>
+          <button
+            className={styles.upload + " justify-center items-center"}
+            onClick={onUpload}
+          >
+            Upload
+            {isLoading && <div className={styles.loader + " ml-3"} />}
+          </button>
+        </div>
       </div>
     </div>
-
   );
 }
 
