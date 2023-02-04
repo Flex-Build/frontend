@@ -42,3 +42,79 @@
 .designpage::-webkit-scrollbar {
     display: none;
 }
+
+.popup1{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    top:0;
+    
+    // margin-top: 50%;
+}
+
+.popup2{
+    box-shadow: 0px 0px 10px gray;
+    height: fit;
+    margin: auto;
+    width: 33%;
+    background-color: rgb(255, 255, 255);
+    margin-top:auto;
+    margin-bottom:auto;
+    position: fixed;
+    top:40%;
+    left:33%;  
+    border-radius: 20px;  
+    vertical-align: middle;
+    padding: 2%;
+    transition: box-shadow 0.2s;
+}
+.popup2:hover{
+    box-shadow: 0px 0px 20px gray;
+}
+
+.popup3{
+    height: 2.5rem;
+    width: 100%;
+    background: #E4F5EB;
+    border-radius: 10px;
+    padding: 5%;
+    font-size: large;
+}
+
+.popcenter{
+    display: flex;
+    left: auto;
+    right: auto;
+    // justify-content: space-between;
+    padding-left: auto;
+    padding-right: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.popup4{
+    background: rgb(255, 191, 0);
+    height: 2.5rem;
+    margin-top: 10% ;
+    margin-left: auto;
+    width: 30%;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: large
+    
+}
+
+.popup5{
+    background-color: #73AD21 ;
+    height: 2.5rem;
+    text-align: center;
+    margin-top: 10% ;
+    margin-left : 5%;
+    width: 30%;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: large
+}
+
+
