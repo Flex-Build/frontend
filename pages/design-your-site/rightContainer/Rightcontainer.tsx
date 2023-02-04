@@ -1,14 +1,10 @@
 import { FlexBuild } from "@/src/contracts";
-import { GetAllComponents_components } from "@/src/graph-ql/queries/GET_ALL_COMPONENTS/__generated__/GetAllComponents";
-import { getComponents } from "@/src/services/ipfs/smart-contract/get-components";
 import { canvasSubject, componentAdded } from "@/src/subjects/canvas";
 import { BigNumber, BigNumberish } from "ethers";
 import React, { useEffect, useState } from "react";
-import { useSigner } from "wagmi";
 import Container from "../TestComponents/Container";
 import Exp from "../TestComponents/Exp/Exp";
 import styles from "./Rightcontainer.module.scss";
-import Image from 'next/image'
 
 type Props = {
   htmlgen?: (a: string) => void;
@@ -78,11 +74,13 @@ const Rightcontainer: React.FC<Props> = ({ htmlgen }) => {
       >
         {components.length === 0 ? (
           <div className={styles.dragHere}>
+            <picture>
             <img
               src="https://cdn-icons-png.flaticon.com/512/6591/6591195.png"
               className={styles.dragimg}
               alt="img"
             />
+            </picture>
             <p className={styles.Dragdrop}>Drag & drop</p>
             <p className={styles.Dragdrop}>components here!</p>
           </div>
