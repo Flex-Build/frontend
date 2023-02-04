@@ -6,7 +6,7 @@ import styles from "./WriteAComponent.module.scss";
 import Editor from "@monaco-editor/react";
 import { ethers } from "ethers";
 function WriteAComponent() {
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState("<p>Hello Flex</p>");
   const [price, setPrice] = useState<number>(0);
   const { data: signer } = useSigner();
 
