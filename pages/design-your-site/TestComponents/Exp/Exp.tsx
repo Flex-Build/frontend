@@ -53,6 +53,7 @@ const Exp = (p: Props) => {
   return (
     <>
       <div
+      className="reset"
         dangerouslySetInnerHTML={{
           __html: htmlString,
         }}
