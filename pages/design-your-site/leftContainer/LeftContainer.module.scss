@@ -3,9 +3,7 @@
     height:100%;
     background-color: #E4F5EB;
     width: 27%;
-    padding: 30px;
-    padding-left: auto;
-    padding-right: auto;
+    padding: 20px 30px 30px 30px;
     align-items: center;
     border-right: 2px solid #a6dbbc;
     
@@ -15,6 +13,8 @@
     font-weight: bold;
     margin-bottom: 10%;
     text-align: center; 
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
 }
 
 .componentName{
