@@ -38,9 +38,9 @@ function Navbar({ component }: { component: string }) {
             </h1>
           </li>
           {component==="dys"?<li className="mx-5 w-44 py-4 px-2 text-lg text-center border-b-4 border-green-500 hover:text-red-600">
-            <Link href="/design-your-site">Your Design</Link>
+            <Link href="/">Your Design</Link>
           </li>:<li className="mx-5 w-44 py-4 px-2 text-lg text-center border-green-500 hover:text-red-600">
-            <Link href="/design-your-site">Your Design</Link>
+            <Link href="/">Your Design</Link>
           </li>}
           {component==="wyc"?<li className="mx-5 w-72 py-4 px-2 text-lg text-center border-b-4 border-green-500 hover:text-red-600">
             <Link href="/write-a-component">Create Component</Link>
