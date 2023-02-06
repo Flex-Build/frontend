@@ -28,7 +28,9 @@ function Home() {
       await buyComponents(ids, totalPrice, signer);
       await publish_site(siteName, [], htmlString);
       toast("It will take few minutes for website to get active")
-    } catch (e) {}
+    } catch (e:any) {
+      toast(e?.data?.message)
+    }
 
     setLoadOrNot(false);
   };
