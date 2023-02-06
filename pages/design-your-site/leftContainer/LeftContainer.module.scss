@@ -2,11 +2,10 @@
 .leftcontainer{
     height:100%;
     background-color: #E4F5EB;
-    width: 27%;
-    padding: 20px 30px 30px 30px;
+    width: 100%;
+    padding: 10px 0px 30px 20px;
     align-items: center;
     border-right: 2px solid #a6dbbc;
-    
 }
 .compName{
     font-size: x-large;
@@ -27,6 +26,7 @@
     padding: 2%;
     margin-top: 2%;
     margin-bottom: 8%;
+    margin-right: 1rem;
 }
 
 .componentCard:hover{

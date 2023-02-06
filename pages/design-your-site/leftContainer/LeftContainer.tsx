@@ -19,9 +19,11 @@ function LeftContainer() {
     });
   }, []);
   return (
-    <div className={styles.leftcontainer}>
-      <p className={styles.compName}>Components</p>
-
+    <div className="flex flex-col w-[27%]">
+      <div className="bg-[#E4F5EB] mb-1.5 pl-6 pt-3">
+        <p className="text-3xl mb-4">Components</p>
+      </div>
+      <div className={styles.leftcontainer}>
       <div className={styles.complist}>
         <p className={styles.componentName}>Container</p>
         <div className={styles.componentCard}>
@@ -48,6 +50,7 @@ function LeftContainer() {
             );
           })}
       </div>
+    </div>
     </div>
   );
 }
