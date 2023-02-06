@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { createComponent } from "@/src/services/ipfs/smart-contract/create-component";
 import React, { useState } from "react";
 import { useSigner } from "wagmi";
