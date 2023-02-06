@@ -40,7 +40,6 @@ function DesignYourSite() {
   return (
     <div className={styles.designpage}>
       <div className="h-full w-full">
-        <Navbar component="dys"/>
         <div className={styles.maincontainer}>
           <LeftContainer />
           <Rightcontainer htmlgen={setHtmlString} />

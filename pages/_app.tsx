@@ -7,6 +7,7 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { WagmiConfig } from "wagmi";
 import { Chains, wagmiClient } from "@/walletConfig";
+import Navbar from "@/components/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   const client = new ApolloClient({
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider chains={Chains}>
         <ApolloProvider client={client}>
+          <Navbar/>
           <Component {...pageProps} />
         </ApolloProvider>
       </RainbowKitProvider>
