@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Properties from "../../properties/Properties";
 import mus from "mustache";
 import { encapsulateCss } from "@/src/services/encapsulateCss";
+import { propertiesSubject } from "@/src/subjects/properties";
 type Props = {
   ipfsHash: string;
   id: string;
@@ -20,6 +21,17 @@ const Exp = (p: Props) => {
     padding: "10px",
   });
 
+  useEffect(()=>{
+    const subj=propertiesSubject.subscribe(([id])=>{
+      if(id!=p.id && display){
+        setDisplay(false)
+      }
+    })
+
+    return ()=>{
+      subj.unsubscribe()
+    }
+  },[display])
   useEffect(() => {
     const encapsulated_css = encapsulateCss(rawHtmlString, p.id);
     const rendered = mus.render(encapsulated_css, extraProps);
@@ -58,7 +70,9 @@ const Exp = (p: Props) => {
           __html: htmlString,
         }}
         style={cssProps}
-        onClick={() => setDisplay(true)}
+        onClick={() => {
+          propertiesSubject.next([p.id,true])
+          setDisplay(true)}}
       ></div>
       <Properties
         visible={display}
