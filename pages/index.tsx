@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { publish_site } from "@/src/apis/axios";
 import { buyComponents } from "@/src/services/ipfs/smart-contract/buy-components";
 import { componentAdded } from "@/src/subjects/canvas";
