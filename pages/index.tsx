@@ -7,6 +7,8 @@ import { useSigner } from "wagmi";
 import LeftContainer from "./design-your-site/leftContainer/LeftContainer";
 import Rightcontainer from "./design-your-site/rightContainer/Rightcontainer";
 import styles from "./design-your-site/DesignYourSite.module.scss";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
   const [siteName, setSiteName] = useState("");
@@ -22,6 +24,7 @@ function Home() {
     try {
       await buyComponents(ids, totalPrice, signer);
       await publish_site(siteName, [], htmlString);
+      toast("It will take few minutes for website to get active")
     } catch (e) {}
 
     setLoadOrNot(false);
@@ -38,6 +41,7 @@ function Home() {
   }, []);
   return (
     <div className={styles.designpage}>
+      <ToastContainer/>
       <div className="h-full w-full">
         <div className={styles.maincontainer}>
           <LeftContainer />
