@@ -5,7 +5,6 @@ import { BigNumber, BigNumberish, Signer } from "ethers";
 export const buyComponents = async (ids: BigNumberish[], total: BigNumber, signer: FetchSignerResult<Signer>) => {
 
     if (!signer) {
-        //TODO: error
         return;
     }
 

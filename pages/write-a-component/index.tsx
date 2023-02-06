@@ -4,6 +4,9 @@ import { useSigner } from "wagmi";
 import styles from "./WriteAComponent.module.scss";
 import Editor from "@monaco-editor/react";
 import { ethers } from "ethers";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function WriteAComponent() {
   const [code, setCode] = useState("");
@@ -13,7 +16,13 @@ function WriteAComponent() {
   const { data: signer } = useSigner();
 
   const onUpload = () => {
-    if (!price || !signer) return;
+    if (!price) {
+      toast("Please set price")
+      return};
+    if(!signer){
+      toast("Please connect wallet")
+      return
+    }
     const price_BigInt = ethers.utils.parseEther(price.toString());
     setIsLoading(true);
     createComponent(name, code, price_BigInt, signer).then((e) => {
@@ -25,6 +34,7 @@ function WriteAComponent() {
   };
   return (
     <div className={styles.writeAComponentContainer}>
+      <ToastContainer/>
       <div className={styles.insertCode}>
         <div style={{ marginTop: "10px" }}></div>
         <Editor

@@ -19,7 +19,10 @@ function Home() {
   const [ids, setIds] = useState<BigNumberish[]>([]);
   const { data: signer } = useSigner();
   const onOk = async () => {
-    if (!signer) return;
+    if (!signer) {
+      toast("Please connect wallet")
+      return
+    };
     setLoadOrNot(true);
     try {
       await buyComponents(ids, totalPrice, signer);
